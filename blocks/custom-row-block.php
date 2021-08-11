@@ -18,13 +18,13 @@ if( !empty($block['anchor']) ) {
 // Create class attribute allowing for custom "className" and "align" values.
 $className = 'custom-row';
 // Load values and assign defaults.
-$title = get_field('title') ?: '';
-$description = get_field('description') ?: '';
-$image = get_field('image') ?: '';
+$title = get_field('title') ?: 'Title placeholder';
+$description = get_field('description') ?: 'Description placeholder';
+$image = get_field('image') ?: 'https://picsum.photos/300/468';
 $row_order = get_field('row_order') ?: 'text-left';
-$button = get_field('button');
+$button = get_field('button') ?: array("button_text"=>"Button");
 $background = get_field('background');
-$text_color = get_field('text_color');
+$text_color = get_field('text_color') ?: '#000';
 
 
 ?>
@@ -49,8 +49,6 @@ $text_color = get_field('text_color');
             --c-row-text-color: <?php echo $text_color ?>;
             --c-row-background: <?php echo $background ?>;
             max-width: 100%;
-        }
-            .c-row{
         }
     </style>
 </div>
